@@ -35,6 +35,18 @@ html, body {
     position: relative; 
 }
 
+.bg-link {
+    position: absolute;
+    bottom: 10px;             
+    right: 10px;              
+    color: white;            
+    font-size: 18px;
+    text-decoration: none;
+    background: rgba(0,0,0,0.5);  
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 
 #sec1 { background: #ececec; }
 #sec2 { background: #dfdfdf; }
@@ -46,16 +58,55 @@ html, body {
 
 .section#sec1 {
     position: relative;
-    overflow: hidden; /* important! cuts off anything outside */
+    overflow: hidden; 
     width: 100vw;
     height: 100vh;
 }
+
+.section#sec2 {
+    position: relative;
+    overflow: hidden;  
+    width: 100vw;
+    height: 100vh;
+}
+
+.section#sec2 .section-bg {
+    position: absolute;
+    top: 50%;             
+    left: 50%;
+    width: 100%;
+    height: 150%;
+    transform: translate(-50%, -65%);
+    object-fit: cover;   
+    object-position: center; 
+    z-index: 0;
+}
+
+.section#sec3 {
+    position: relative;
+    overflow: hidden;  
+    width: 100vw;
+    height: 100vh;
+}
+
+.section#sec3 .section-bg {
+    position: absolute;
+    top: 50%;             
+    left: 50%;
+    width: 100%;
+    height: 130%;
+    transform: translate(-50%, -40%);
+    object-fit: cover;   
+    object-position: center; 
+    z-index: 0;
+}
+
 
 .section#sec4 {
     position: relative;
     overflow: hidden; 
     width: 100vw;
-    height: 100vh; /* section stays same */
+    height: 100vh; 
 }
 
 .section#sec4 .section-bg {
@@ -63,7 +114,7 @@ html, body {
     top: 50%;
     left: 50%;
     width: 100%;
-    height: 130%;  /* extra 10% so bottom shows */
+    height: 130%;  
     transform: translate(-50%, -60%);
     object-fit: cover;
     object-position: center; 
@@ -71,80 +122,94 @@ html, body {
 }
 
 
-
-
-
 .section#sec5 {
     position: relative;
-    overflow: hidden;  /* keep section scroll-free */
+    overflow: hidden;  
     width: 100vw;
     height: 100vh;
 }
 
 .section#sec5 .section-bg {
     position: absolute;
-    top: 0;             /* start at the top of the section */
+    top: 0;             
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* fills section, may crop slightly */
-    object-position: center; /* ensures the top stays visible */
+    object-fit: cover;   
+    object-position: center; 
+    z-index: 0;
+}
+
+.section#sec6 {
+    position: relative;
+    overflow: hidden;  
+    width: 100vw;
+    height: 100vh;
+}
+
+.section#sec6 .section-bg {
+    position: absolute;
+    top: 0;             
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+    object-position: center; 
     z-index: 0;
 }
 
 .title-page {
-    position: relative;       /* container for absolutely positioned children */
+    position: relative;       
     width: 100vw;
     height: 100vh;
     text-align: center;
-    overflow: hidden;         /* cut off image overflow */
+    overflow: hidden;         
 }
-
 .title-page img {
     width: 100%;
     height: 100%;
-    object-fit: cover;        /* fills container without changing aspect ratio */
+    object-fit: cover;        
     display: block;
     margin: 0;
 }
 
 .title-page h1 {
-    position: absolute;       /* position over image */
-    top: 20%;                 /* vertical center */
-    left: 50%;                /* horizontal center */
-    transform: translate(-50%, -50%); /* center exactly */
+    position: absolute;     
+    top: 20%;                
+    left: 50%;               
+    transform: translate(-50%, -50%); 
     font-family: "Gotisch", serif;
     font-size: 96px;
     color: #dfac2c;
     text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.74);
     margin: 0;
-    pointer-events: none;     /* ensures clicks pass through to image if needed */
+    pointer-events: none;     
 }
 
 .title-page h2 {
-    position: absolute;       /* position over image */
-    top: 30%;                 /* vertical center */
-    left: 50%;                /* horizontal center */
-    transform: translate(-50%, -50%); /* center exactly */
+    position: absolute;       
+    top: 30%;                 
+    left: 50%;                
+    transform: translate(-50%, -50%); 
     font-family: "Gotisch", serif;
     font-size: 72px;
     color: #dfac2c;
     text-shadow: 4px 4px 12px rgb(0, 0, 0, 0.74);
     margin: 0;
-    pointer-events: none;     /* ensures clicks pass through to image if needed */
+    pointer-events: none;    
 }
 
 .title-page h3 {
-    position: absolute;       /* position over image */
-    top: 40%;                 /* vertical center */
-    left: 50%;                /* horizontal center */
-    transform: translate(-50%, -50%); /* center exactly */
+    position: absolute;       
+    top: 40%;                 
+    left: 50%;                
+    transform: translate(-50%, -50%); 
     font-family: "Gotisch", serif;
     font-size: 96px;
     color: #dfac2c;
     text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.74);
     margin: 0;
-    pointer-events: none;     /* ensures clicks pass through to image if needed */
+    pointer-events: none;     
 }
 
 
@@ -338,14 +403,14 @@ html, body {
 }
 
 
-.popup-center {
+.popup-top {
     transition: all 0.8s ease-out;
     top: -100vh;
     left: 200px;
     right: 200px;
 }
 
-.popup-center img {
+.popup-top img {
     width: 100%;           
     height: 30vh;          
 }
@@ -353,15 +418,15 @@ html, body {
 
 .popup-bottom {
     position: absolute;
-    bottom: 150px;       /* final vertical position */
+    bottom: 150px;      
     left: 200px;
     right: 200px;
 
-    transform: scaleX(0);    /* collapsed horizontally */
-    transform-origin: center; /* roll out from center */
+    transform: scaleX(0);    
+    transform-origin: center; 
     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 
-    opacity: 0;              /* hidden */
+    opacity: 0;             
 }
 
 .popup-bottom img {
@@ -370,8 +435,28 @@ html, body {
     display: block;
 }
 
+.popup-center {
+    position: absolute;
+    top: 200px;
+    bottom: 200px;      
+    left: 200px;
+    right: 200px;
 
-.popup-center.active-popup {
+    transform: scaleX(0);    
+    transform-origin: center; 
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+
+    opacity: 0;             
+}
+
+.popup-center img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.popup-top.active-popup {
     top: 50px;
 }
 
@@ -387,7 +472,11 @@ html, body {
     transform: scaleY(1);
 }
 .popup-bottom.active-popup {
-    transform: scaleX(1);    /* expand to full width */
+    transform: scaleX(1);    
     opacity: 1;
 }
 
+.popup-center.active-popup {
+    transform: scaleX(1);    
+    opacity: 1;
+}
