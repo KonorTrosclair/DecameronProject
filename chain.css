@@ -1,0 +1,15 @@
+.chain-bar {
+    position: absolute;
+    top: -40px;
+    left: 270px;
+
+    width: 180px;
+    height: 40px;
+
+    background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='20'%20height='40'%20viewBox='0%200%2020%2040'%20fill='none'%20stroke='gray'%20stroke-width='3'%3E%3Ccircle%20cx='10'%20cy='10'%20r='8'/%3E%3Ccircle%20cx='10'%20cy='30'%20r='8'/%3E%3C/svg%3E");
+    background-repeat: repeat-y;
+    background-size: 20px 40px;
+
+    z-index: 200;
+    opacity: 0.9;
+}
