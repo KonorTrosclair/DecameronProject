@@ -23,7 +23,7 @@ function hideAllPopups() {
     });
 }
 
-// Show popup(s) inside the current section
+
 function showPopup() {
     const sec = sections[currentIndex];
     const popup = sec.querySelector(".popup-parchment");
@@ -33,7 +33,7 @@ function showPopup() {
 
 document.addEventListener("DOMContentLoaded", () => setActiveSlide(0));
 
-// Arrow buttons
+
 document.getElementById("rightBtn").onclick = () => {
     if (currentIndex < sections.length - 1) setActiveSlide(currentIndex + 1);
 };
@@ -41,7 +41,7 @@ document.getElementById("leftBtn").onclick = () => {
     if (currentIndex > 0) setActiveSlide(currentIndex - 1);
 };
 
-// Adjust scroll on resize
+
 window.addEventListener("resize", () => {
     container.scrollTo({ left: currentIndex * window.innerWidth });
 });
@@ -62,13 +62,13 @@ document.getElementById("hideBtn").onclick = () => {
 
 document.addEventListener("keydown", (event) => {
     switch(event.key) {
-        case "ArrowRight": // go to next section
+        case "ArrowRight": 
             if (currentIndex < sections.length - 1) setActiveSlide(currentIndex + 1);
             break;
-        case "ArrowLeft": // go to previous section
+        case "ArrowLeft": 
             if (currentIndex > 0) setActiveSlide(currentIndex - 1);
             break;
-        case "ArrowUp": // show popup
+        case "ArrowUp": 
             showPopup();
             const popup = sections[currentIndex].querySelector(".popup-left");
             if (popup) {
@@ -76,9 +76,31 @@ document.addEventListener("keydown", (event) => {
                 adjustParchmentText();
             }
             break;
-        case "ArrowDown": // hide popup
+        case "ArrowDown": 
             hideAllPopups();
             break;
     }
 });
+
+let wheelCooldown = false;
+
+container.addEventListener("wheel", (e) => {
+    e.preventDefault(); 
+
+    if (wheelCooldown) return; 
+
+    if (e.deltaY > 0) {
+       
+        if (currentIndex < sections.length - 1) {
+            setActiveSlide(currentIndex + 1);
+        }
+    } else {
+        if (currentIndex > 0) {
+            setActiveSlide(currentIndex - 1);
+        }
+    }
+
+    wheelCooldown = true;
+    setTimeout(() => wheelCooldown = false, 400);
+}, { passive: false });
 
