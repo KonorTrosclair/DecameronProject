@@ -259,6 +259,20 @@ html, body {
     pointer-events: none;     
 }
 
+.title-page h4 {
+    position: absolute;       
+    top: 50%;                 
+    left: 50%;                
+    transform: translate(-50%, -50%); 
+    font-family: "Angel", serif;
+    font-weight: 500;
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.74);
+    margin: 0;
+    pointer-events: none;     
+}
+
 
 
 
