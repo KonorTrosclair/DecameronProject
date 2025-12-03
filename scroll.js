@@ -2,8 +2,7 @@ const sections = document.querySelectorAll(".section");
 const container = document.getElementById("scroll-container");
 let currentIndex = 0;
 
-// Function to activate a section
-// Show a section (no popup yet)
+
 function setActiveSlide(index) {
     currentIndex = index;
 
@@ -14,12 +13,10 @@ function setActiveSlide(index) {
 
     sections.forEach((sec, i) => sec.classList.toggle("active", i === index));
 
-    // Reset popup for this section
     popupStage = 0;
     hideAllPopups();
 }
 
-// Hide every popup
 function hideAllPopups() {
     document.querySelectorAll(".popup-parchment").forEach(p => {
         p.classList.remove("active-popup");
@@ -33,7 +30,7 @@ function showPopup() {
     if (popup) popup.classList.add("active-popup");
 }
 
-// Initialize first slide
+
 document.addEventListener("DOMContentLoaded", () => setActiveSlide(0));
 
 // Arrow buttons

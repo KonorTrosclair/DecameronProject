@@ -31,7 +31,7 @@ function adjustParchmentText() {
 
         const maxHeight = img.clientHeight - 20;
 
-        autoFitText(textElement, maxHeight, 60); // 60px max font size
+        autoFitText(textElement, maxHeight, 60); 
     });
 }
 
